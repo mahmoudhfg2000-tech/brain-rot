@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brain Rot 🧠💀</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;900&display=swap">
+<style>
+:root{--ink:#14082e;--violet:#6a2cff;--pink:#ff3d8b;--lime:#c6ff3d;--cyan:#22e4ff;--white:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box;margin:0}
+body{height:100%;background:var(--ink);color:var(--white);font-family:Cairo,Tahoma,Arial,sans-serif;font-weight:600;overflow:hidden}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:28px 24px 84px;gap:16px;overflow-y:auto}
+.slide.on{display:flex}
+.s1{background:linear-gradient(135deg,var(--violet),var(--pink))}
+.s2{background:var(--ink)}
+.s3{background:linear-gradient(160deg,#0b6b7a,var(--violet))}
+.s4{background:linear-gradient(135deg,var(--pink),#ff8a3d)}
+.s5{background:var(--violet)}
+.s6{background:linear-gradient(160deg,#0f5b3a,#1a8f5c)}
+.s7{background:linear-gradient(135deg,var(--pink),var(--violet))}
+h1{font-size:clamp(40px,9vw,92px);font-weight:900;line-height:1.1}
+h2{font-size:clamp(28px,5.5vw,52px);font-weight:900;line-height:1.25}
+p,li{font-size:clamp(18px,2.8vw,28px);line-height:1.6}
+.lime{color:var(--lime)}.cyan{color:var(--cyan)}
+.tag{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));inset-inline-start:16px;background:var(--lime);color:var(--ink);padding:4px 14px;border-radius:99px;font-size:15px;font-weight:900}
+.meme{background:var(--white);color:#111;border:5px solid var(--ink);border-radius:14px;padding:14px 22px;max-width:560px;width:100%;transform:rotate(-2deg);box-shadow:8px 8px 0 var(--lime)}
+.meme b{display:block;font-size:clamp(20px,3.4vw,32px);font-weight:900;line-height:1.35}
+.meme small{font-size:15px;color:#555}
+.opts{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:760px;width:100%}
+.opt{font:inherit;font-weight:900;font-size:clamp(18px,2.8vw,26px);color:var(--ink);background:var(--cyan);border:0;border-radius:16px;padding:14px 26px;cursor:pointer;min-width:200px}
+.opt:nth-child(2){background:var(--lime)}.opt:nth-child(3){background:var(--pink);color:#fff}.opt:nth-child(4){background:#fff}
+.opt:focus-visible,.nav button:focus-visible{outline:4px solid #fff;outline-offset:3px}
+.res{min-height:2.4em;font-weight:900;color:var(--lime);font-size:clamp(18px,2.8vw,26px)}
+.cards{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;max-width:900px}
+.card{background:rgba(20,8,46,.55);border-radius:18px;padding:16px 22px;flex:1 1 220px}
+.card h3{font-size:clamp(22px,3.2vw,32px);font-weight:900;color:var(--lime)}
+.card p{font-size:clamp(16px,2.3vw,22px)}
+.nav{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));left:0;right:0;display:flex;justify-content:center;align-items:center;gap:18px;z-index:5}
+.nav button{font:inherit;font-weight:900;font-size:22px;width:54px;height:54px;border-radius:50%;border:0;background:var(--lime);color:var(--ink);cursor:pointer}
+#c{font-size:18px;min-width:56px;text-align:center}
+.s8{background:linear-gradient(135deg,#ff8a3d,var(--pink))}
+.s9{background:linear-gradient(135deg,var(--ink),#3b1a8f)}
+.flip{background:var(--ink);border:3px solid var(--lime);border-radius:18px;padding:16px;flex:1 1 180px;cursor:pointer;font:inherit;color:#fff;min-height:110px;font-weight:900;font-size:clamp(22px,3.2vw,32px)}
+.flip small{display:block;color:var(--lime);font-size:clamp(15px,2.1vw,20px);margin-top:6px;font-weight:600}
+.flip.open{background:var(--lime);color:var(--ink)}.flip.open small{color:var(--ink)}
+.opt.sel{background:var(--lime);color:var(--ink);outline:4px solid #fff}
+.meter{width:100%;max-width:560px;height:26px;background:rgba(255,255,255,.2);border-radius:99px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--lime),var(--pink));transition:width .4s}
+#bar{position:fixed;top:0;right:0;height:6px;background:var(--lime);width:0;transition:width .3s;z-index:6}
+#t{background:var(--lime)}
+.cf{position:fixed;top:-30px;font-size:30px;pointer-events:none;z-index:9;animation:fall 1.7s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+@media (prefers-reduced-motion:no-preference){.slide.on{animation:in .35s ease}@keyframes in{from{opacity:0;transform:translateX(-30px)}}}
+@media (prefers-reduced-motion:no-preference){.s1 h1{animation:pop .7s cubic-bezier(.3,1.6,.5,1)}@keyframes pop{from{transform:scale(.4);opacity:0}}}
+.s10{background:var(--ink)}
+.big{font-size:clamp(70px,16vw,150px);line-height:1}
+#fw{font-size:clamp(48px,15vw,160px);font-weight:900;line-height:1.1}
+.nts{position:absolute;top:calc(56px + env(safe-area-inset-top,0px));inset-inline-end:14px;display:flex;flex-direction:column;gap:8px;z-index:2}
+.nt{background:#fff;color:#111;border-radius:14px;padding:8px 14px;font-size:15px;font-weight:900;box-shadow:4px 4px 0 var(--lime)}
+.fl{display:none;position:fixed;bottom:-60px;font-size:34px;opacity:.3;pointer-events:none}
+.warn{font-size:14px;opacity:.7}
+@media (prefers-reduced-motion:no-preference){
+.fl{display:block;animation:up linear infinite}@keyframes up{to{transform:translateY(-115vh) rotate(40deg)}}
+.s1 h1.gl{animation:pop .7s cubic-bezier(.3,1.6,.5,1),gl 1.2s steps(1) .7s infinite}
+@keyframes gl{0%{text-shadow:4px 0 var(--cyan),-4px 0 var(--lime)}50%{text-shadow:-5px 2px var(--pink),5px -2px var(--cyan)}100%{text-shadow:none}}
+.s1,.s7{background-size:300% 300%}
+.s1.on,.s7.on{animation:in .35s ease,bg 6s ease infinite}@keyframes bg{50%{background-position:100% 50%}}
+.s1.on .nt{animation:nt .5s backwards}@keyframes nt{from{opacity:0;transform:translateY(-20px) scale(.8)}}
+.big{animation:pulse .8s ease-in-out infinite alternate}@keyframes pulse{to{transform:scale(1.15) rotate(6deg)}}
+}
+.s11{background:linear-gradient(160deg,#0b3a8f,var(--violet))}
+.slide{z-index:0}
+.slide::before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(rgba(255,255,255,.2) 1.5px,transparent 1.7px) 0 0/26px 26px;pointer-events:none}
+h1,h2{text-shadow:4px 4px 0 rgba(20,8,46,.55)}
+.card{background:rgba(255,255,255,.14);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,.4);box-shadow:6px 6px 0 rgba(20,8,46,.5);border-radius:22px}
+.opt,.nav button{border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.opt:active,.nav button:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.tag{border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+.meme small{display:block;font-weight:900;margin-bottom:4px}
+.eb{display:flex;flex-direction:column;width:100%;max-width:640px;border:5px solid #111;border-radius:16px;overflow:hidden;box-shadow:8px 8px 0 var(--lime);background:#111;gap:4px;transform:rotate(1.5deg)}
+.eb div{display:flex;align-items:center;background:#fff;color:#111}
+.eb b{flex:0 0 27%;font-size:clamp(36px,7.5vw,70px);padding:6px;text-align:center;line-height:1.1}
+.eb span{flex:1;font-size:clamp(17px,3vw,28px);font-weight:900;padding:8px 14px;text-align:start;line-height:1.4}
+.s12{background:linear-gradient(135deg,#ff8a3d,var(--violet))}
+.s13{background:linear-gradient(135deg,var(--cyan),var(--pink))}
+.s13 h2,.s13 .lime{color:#fff}
+.flip small[hidden]{display:none}
+.s4{background:linear-gradient(135deg,var(--pink),#d94f12)}
+.s8{background:linear-gradient(135deg,#d94f12,#c2185b)}
+.s12{background:linear-gradient(135deg,#d94f12,var(--violet))}
+.s7 .lime,.s8 .lime,.s12 .lime{background:var(--ink);padding:0 .35em;border-radius:.3em;display:inline-block;text-shadow:none}
+p{text-shadow:0 2px 0 rgba(20,8,46,.4)}
+.warn{opacity:.9;font-size:15px}
+.card:nth-child(odd){transform:rotate(-1deg)}.card:nth-child(even){transform:rotate(1deg)}
+.opt,.flip{transition:transform .15s}
+@media (hover:hover){.opt:hover,.flip:hover{transform:translateY(-4px) rotate(-1.5deg)}}
+.s14{background:linear-gradient(135deg,#3b1a8f,#a0159c)}
+.tier{display:flex;flex-direction:column;gap:5px;width:100%;max-width:720px;border:5px solid var(--ink);border-radius:16px;overflow:hidden;box-shadow:8px 8px 0 var(--lime);background:var(--ink);transform:rotate(-1deg)}
+.tier div{display:flex;align-items:stretch;background:#fff;color:#111}
+.tier b{flex:0 0 64px;display:grid;place-items:center;font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--ink)}
+.tier span{flex:1;text-align:start;padding:10px 14px;font-size:clamp(16px,2.6vw,24px);font-weight:900;line-height:1.35}
+</style>
+</head>
+<body>
+
+<section class="slide s1 on">
+<span class="tag">المتحدث: ______</span>
+<div class="nts"><div class="nt" style="animation-delay:1s">🔔 تيك توك: 99+ فيديو جديد</div><div class="nt" style="animation-delay:1.8s">💬 صاحبك: بص الريل ده!!</div><div class="nt" style="animation-delay:2.6s">📱 وقت الشاشة: 7 ساعات</div></div>
+<div class="big">💀</div>
+<h1 class="gl">Brain Rot 🧠</h1>
+<h2>هل مخك لسه شغال؟ 👀</h2>
+<div class="meme"><b>أنا: "هبص على الموبايل دقيقة بس"</b><b class="cyan" style="color:#6a2cff">الساعة بعد 4 ساعات: 💀</b></div>
+</section>
+
+<section class="slide s10" id="ms2">
+<span class="tag">المتحدث: ______</span>
+<h2 id="mh">جاهز؟ 😈 <span class="lime">اضغط وماتشيلش عينك من الشاشة!</span></h2>
+<div id="fw" hidden></div>
+<h2 id="fe" hidden>😵‍💫 مخك لسه معايا؟<br><span class="lime">ده الإحساس اللي بنسميه Brain Rot!</span></h2>
+<button class="opt" id="ms">▶️ ابدأ</button>
+<p class="warn">⚠️ لو الوميض بيتعبك بلاش تبص للشاشة</p>
+</section>
+
+<section class="slide s2">
+<span class="tag">المتحدث: ______</span>
+<h2>ارفع إيدك 🙋 <span class="lime">أنت بتقعد كام ساعة على الموبايل في اليوم؟</span></h2>
+<div class="opts" data-res="r2">
+<button class="opt" data-m="طبيعي، بس خد بالك 😅">أقل من ساعتين</button>
+<button class="opt" data-m="أغلبنا هنا 😂 ومعاك حق تتفاجئ">3 لـ 5 ساعات</button>
+<button class="opt" data-m="🚨 الموبايل بقى عضو في جسمك">أكتر من 6 ساعات</button>
+</div>
+<div class="res" id="r2">اختار وشوف الرد 👇</div>
+</section>
+
+<section class="slide s3">
+<span class="tag">المتحدث: ______</span>
+<h2>يعني إيه <span class="lime">Brain Rot</span>؟ 🤔</h2>
+<p>مصطلح شعبي (مش تشخيص طبي): تشتت وملل وصعوبة تركيز بعد كتر المحتوى السريع والتافه (ريلز، شورتس، تيك توك). وفي 2024 بقى كلمة العام من Oxford! 🏆</p>
+<div class="meme"><b>مخك بعد 200 ريل ورا بعض:</b><small>"سكيبيدي... أوه استنى كنت بذاكر إيه؟"</small></div>
+</section>
+
+<section class="slide s8">
+<span class="tag">المتحدث: ______</span>
+<h2>قاموس الـ Brain Rot 📖 <span class="lime">اضغط على الكلمة</span></h2>
+<div class="cards" style="max-width:900px">
+<button class="flip">Skibidi<small hidden>كلمة بلا معنى، بتتقال للضحك بس 🚽</small></button>
+<button class="flip">Rizz<small hidden>الكاريزما والقدرة على جذب الناس 😎</small></button>
+<button class="flip">Sigma<small hidden>شخص مستقل وهادي وماشي لوحده 🐺</small></button>
+<button class="flip">Aura<small hidden>الهيبة اللي حواليك، وبتزيد أو تقل بتصرفاتك ✨</small></button>
+<button class="flip">Cooked<small hidden>خلصت أو اتبهدلت، "أنا cooked في الامتحان" 🍳</small></button>
+<button class="flip">NPC<small hidden>حد بيتصرف زي الروبوت من غير تفكير 🤖</small></button>
+</div>
+<p>مين فيكم قال واحدة منهم النهارده؟ 😂</p>
+</section>
+
+<section class="slide s4">
+<span class="tag">المتحدث: ______</span>
+<h2>إيه اللي بيحصل جوه دماغك؟ 🧪</h2>
+<div class="cards">
+<div class="card"><h3>⚡ دوبامين سريع</h3><p>كل ريل مكافأة صغيرة، فالمذاكرة بتبقى مملة بالمقارنة.</p></div>
+<div class="card"><h3>🔄 سحب لا نهائي</h3><p>مفيش نهاية للصفحة، فمفيش لحظة تقول فيها كفاية.</p></div>
+<div class="card"><h3>🧩 تركيز مشتت</h3><p>كل ما تتعود على السرعة، المحتوى الطويل بيحسسك إنه أبطأ وأتقل.</p></div>
+</div>
+<div class="meme"><b>المدرس: "ركّز معايا خمس دقايق"</b><small>مخي: 😵‍💫 "أنا اتعودت على 7 ثواني"</small></div>
+</section>
+
+<section class="slide s12">
+<span class="tag">المتحدث: ______</span>
+<h2>ميم 😂 <span class="lime">مستواك فين في المذاكرة؟</span></h2>
+<div class="eb">
+<div><b style="background:#ffe08a">🧠</b><span>بذاكر وخلاص</span></div>
+<div><b style="background:#ffb36b">🧠✨</b><span>بذاكر والموبايل جنبي</span></div>
+<div><b style="background:#ff7fb0">🤯</b><span>بذاكر وبرد على كل ريل</span></div>
+<div><b style="background:#8f6bff">🌌</b><span>فتحت الكتاب... لقيتني في تيك توك بقالي ساعة</span></div>
+</div>
+</section>
+
+<section class="slide s11">
+<span class="tag">المتحدث: ______</span>
+<h2>أحدث الأخبار 📰 <span class="lime">العلم قال إيه؟</span></h2>
+<div class="cards" style="max-width:940px">
+<div class="card"><h3>🏆 ديسمبر 2024</h3><p>Oxford اختارت "Brain Rot" كلمة العام.</p></div>
+<div class="card"><h3>📊 +98 ألف شخص</h3><p>أكبر مراجعة (71 دراسة، 2025): الاستخدام الإدماني للفيديوهات القصيرة مرتبط بضعف التركيز وضبط النفس.</p></div>
+<div class="card"><h3>🧲 يناير 2026</h3><p>دراسة MRI من جامعة تشجيانج (مجلة NeuroImage) على 56 شاب: الفيديوهات القصيرة اللي عجبتهم قللت مؤقتاً نشاط مناطق التحكم في النفس.</p></div>
+</div>
+<p>⚠️ بس ده ارتباط مش إثبات، و"Brain Rot" مش تشخيص طبي. المشكلة في الإدمان مش في الساعات بس.</p>
+</section>
+
+<section class="slide s5">
+<span class="tag">المتحدث: ______</span>
+<h2>صح ولا غلط؟ 🧐 <span class="lime">"العلم أثبت إن الريلز بتبوظ المخ"</span></h2>
+<div class="opts" data-res="r15" data-correct="1">
+<button class="opt" data-m="❌ لأ، لسه ماتأكدش بالشكل ده">صح، اتأكد خلاص</button>
+<button class="opt" data-m="✅ مظبوط! الدراسات بتوري ارتباط، مش إثبات نهائي. بس ده مش معناه نستهبل 😉">غلط، دي لسه ارتباط مش إثبات</button>
+</div>
+<div class="res" id="r15">اختار الإجابة 👇</div>
+</section>
+
+<section class="slide s5">
+<span class="tag">المتحدث: ______</span>
+<h2>كويز 🎯 <span class="lime">إيه أول علامة إنك واقع في Brain Rot؟</span></h2>
+<div class="opts" data-res="r5" data-correct="1">
+<button class="opt" data-m="❌ لأ، دي مش علامة">بتحب الأكل</button>
+<button class="opt" data-m="✅ صح! ضعف التركيز وصعوبة تكمل حاجة طويلة هي أولى العلامات">مش قادر تكمل فيديو أو مذاكرة من غير ما تمسك الموبايل</button>
+<button class="opt" data-m="❌ لأ، النوم نفسه مش علامة">بتنام بدري</button>
+</div>
+<div class="res" id="r5">اختار الإجابة 👇</div>
+</section>
+
+<section class="slide s9">
+<span class="tag">المتحدث: ______</span>
+<h2>قيس مستوى الـ Brain Rot عندك 🌡️ <span class="lime">اضغط على اللي بيحصل معاك</span></h2>
+<div class="opts" id="mt">
+<button class="opt tg">بفتح الموبايل أول ما أصحى</button>
+<button class="opt tg">بكمل ريلز حتى لو مش عاجبني</button>
+<button class="opt tg">بذاكر وموبايلي جنبي</button>
+<button class="opt tg">بنسى كنت بدوّر على إيه</button>
+</div>
+<div class="meter"><i id="mb"></i></div>
+<div class="res" id="mr">مخك فل! كمّل كدا 🧠</div>
+</section>
+
+<section class="slide s13">
+<span class="tag">المتحدث: ______</span>
+<h2>ميمز تاني 🤣 <span class="lime">اعترف!</span></h2>
+<div class="eb" style="transform:rotate(-1.5deg)">
+<div><b style="background:#ff3d8b">🙅</b><span>أنام بدري وأصحى فايق</span></div>
+<div><b style="background:#c6ff3d">😎</b><span>"ريل واحد كمان" الساعة 3 الفجر</span></div>
+</div>
+<div class="meme" style="transform:rotate(2deg)"><small>Nobody:</small><b>مخي الساعة 3 الفجر:</b><b style="color:#6a2cff">"فيه ريل واحد كمان معاك 😈"</b></div>
+</section>
+
+<section class="slide s14">
+<span class="tag">المتحدث: ______</span>
+<h2>تير ليست 🏆 <span class="lime">إيه أحسن عادة لمخك؟</span></h2>
+<div class="tier">
+<div><b style="background:#c6ff3d">S</b><span>10 دقايق مذاكرة من غير موبايل 📖</span></div>
+<div><b style="background:#22e4ff">A</b><span>مشي أو لعب مع صحابك برا الشاشة 🏃</span></div>
+<div><b style="background:#ffffff">B</b><span>حد استخدام التطبيقات ⏱️</span></div>
+<div><b style="background:#ff8a3d">C</b><span>"ريل واحد كمان" الساعة 3 الفجر 😈</span></div>
+<div><b style="background:#ff3d8b">F</b><span>ريلز طول ما إنت بتذاكر 💀</span></div>
+</div>
+</section>
+
+<section class="slide s6">
+<span class="tag">المتحدث: ______</span>
+<h2>إزاي تنقذ مخك؟ 🛟</h2>
+<div class="cards">
+<div class="card"><h3>⏱️ حدّد وقت</h3><p>فعّل حد استخدام التطبيقات من الإعدادات.</p></div>
+<div class="card"><h3>🔕 اقفل الإشعارات</h3><p>مفيش رنّة، يعني مفيش إغراء.</p></div>
+<div class="card"><h3>📖 ابدأ بـ 10 دقايق</h3><p>اقرأ أو ذاكر 10 دقايق من غير موبايل وزوّد كل يوم.</p></div>
+<div class="card"><h3>🏃 اتحرك</h3><p>مشي أو رياضة أو صحابك براه الشاشة.</p></div>
+</div>
+<button class="opt" id="t">⏱️ تحدي 30 ثانية من غير موبايل: ابدأ</button>
+</section>
+
+<section class="slide s7">
+<span class="tag">المتحدث: ______</span>
+<h1>الخلاصة 🔥</h1>
+<p>الموبايل أداة، مش المفروض يمسك هو عقلك. <span class="lime">أنت اللي تتحكم، مش الريل.</span></p>
+<div class="meme"><b>سؤال أخير:</b><b>إيه أول حاجة هتغيّرها النهارده؟ 🙋</b></div>
+<h2 class="lime">شكراً! 🙌</h2>
+</section>
+
+<div id="bar"></div>
+<div class="nav">
+<button id="n" aria-label="التالي">→</button><span id="c"></span><button id="p" aria-label="السابق">←</button><button id="f" aria-label="ملء الشاشة">⛶</button>
+</div>
+
+<script>
+var s=[].slice.call(document.querySelectorAll('.slide')),i=0,c=document.getElementById('c');
+function go(k){i=Math.max(0,Math.min(s.length-1,k));s.forEach(function(e,j){e.classList.toggle('on',j===i)});c.textContent=(i+1)+' / '+s.length;document.getElementById('bar').style.width=((i+1)/s.length*100)+'%'}
+document.getElementById('n').onclick=function(){go(i+1)};
+document.getElementById('p').onclick=function(){go(i-1)};
+document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')go(i+1);if(e.key==='ArrowRight')go(i-1)});
+var x0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX});
+document.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>60)go(d<0?i+1:i-1);x0=null});
+document.querySelectorAll('.opts').forEach(function(o){o.addEventListener('click',function(e){var b=e.target.closest('.opt');if(b)document.getElementById(o.dataset.res).textContent=b.dataset.m})});
+function boom(){[523,659,784,1046].forEach(function(f,k){setTimeout(beep,k*110,f,.12)});for(var k=0;k<18;k++){var e=document.createElement('span');e.className='cf';e.textContent=['🎉','🧠','⭐','🔥'][k%4];e.style.left=Math.random()*95+'vw';e.style.animationDelay=Math.random()*.5+'s';document.body.appendChild(e);setTimeout(function(x){x.remove()},2400,e)}}
+document.querySelectorAll('.opts[data-correct]').forEach(function(o){o.addEventListener('click',function(e){var b=e.target.closest('.opt');if(b&&[].indexOf.call(o.children,b)==+o.dataset.correct)boom()})});
+document.querySelectorAll('.flip').forEach(function(b){b.onclick=function(){b.classList.toggle('open');var m=b.querySelector('small');m.hidden=!m.hidden}});
+var MS=['مخك فل! كمّل كدا 🧠','بداية خفيفة، لسه تقدر تتدارك 🙂','⚠️ محتاج استراحة من الشاشة','🔥 قرّبت تتعفّن!','💀 Cooked! ابدأ التحدي في السلايد الجاي'];
+document.getElementById('mt').addEventListener('click',function(e){var b=e.target.closest('.tg');if(!b)return;b.classList.toggle('sel');var n=this.querySelectorAll('.sel').length;document.getElementById('mb').style.width=(n*25)+'%';document.getElementById('mr').textContent=MS[n]});
+var tm;document.getElementById('t').onclick=function(){var b=this,n=30;clearInterval(tm);b.textContent='⏱️ '+n+' ثانية... سيب الموبايل!';tm=setInterval(function(){n--;if(n<=0){clearInterval(tm);b.textContent='🎉 عدّيت التحدي! ابدأ تاني';boom()}else b.textContent='⏱️ '+n+' ثانية... سيب الموبايل!'},1000)};
+document.getElementById('f').onclick=function(){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()};
+var AC;function beep(f,d){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();var o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.value=f;g.gain.value=.05;o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+d)}catch(x){}}
+document.addEventListener('click',function(e){if(e.target.closest('button'))beep(480+Math.random()*300,.08)});
+var W=['SKIBIDI','SIGMA','RIZZ','AURA','COOKED','NPC','OHIO','MEWING','FANUM TAX'],C=['#ff3d8b','#c6ff3d','#22e4ff','#ff8a3d','#6a2cff','#ffffff'],LT={'#c6ff3d':1,'#22e4ff':1,'#ffffff':1};
+document.getElementById('ms').onclick=function(){var b=this,p=document.getElementById('ms2'),w=document.getElementById('fw'),n=0;b.hidden=true;document.getElementById('mh').hidden=true;document.getElementById('fe').hidden=true;w.hidden=false;var q=setInterval(function(){var c=C[n%C.length];p.style.background=c;w.style.color=LT[c]?'#14082e':'#fff';w.textContent=W[Math.floor(Math.random()*W.length)];beep(200+Math.random()*700,.06);if(navigator.vibrate)navigator.vibrate(30);if(++n>18){clearInterval(q);w.hidden=true;p.style.background='';document.getElementById('fe').hidden=false;b.hidden=false;b.textContent='🔁 تاني؟'}},420)};
+s.forEach(function(e){for(var k=0;k<6;k++){var x=document.createElement('span');x.className='fl';x.textContent=['🧠','💀','📱','🔥','😵‍💫','⚡'][k];x.style.cssText='left:'+Math.random()*92+'%;animation-duration:'+(6+Math.random()*6)+'s;animation-delay:-'+Math.random()*8+'s';e.appendChild(x)}});
+go(0);
+</script>
+</body>
+</html>
